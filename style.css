@@ -30,13 +30,13 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .logo-mark {
-  width: 44px;
-  height: 44px;
+  width: 80px;
+  height: 80px;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), #7c5cff);
+  /* background: linear-gradient(135deg, var(--accent), #7c5cff); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +44,21 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+.logo-wrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ffffff, #dfe7ff);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+body.dark .logo-wrapper {
+  background: linear-gradient(145deg, #1a2333, #101722);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 .title {
   font-weight: 600;
   font-size: 16px;
@@ -137,6 +152,7 @@ body {
   object-fit: cover;
   display: block;
 }
+
 /* Modern index tag */
 .img-tile .idx {
   position: absolute;
@@ -148,10 +164,11 @@ body {
   font-size: 14px;
   padding: 4px 8px;
   border-radius: 50%; /* circle look */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   pointer-events: none; /* so it doesn’t block drag */
   user-select: none;
 }
+
 /* delete rounded X (X2) */
 .remove-btn {
   position: absolute;
@@ -445,4 +462,3 @@ body.dark .bg-ornament {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
