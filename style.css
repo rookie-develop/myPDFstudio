@@ -137,7 +137,21 @@ body {
   object-fit: cover;
   display: block;
 }
-
+/* Modern index tag */
+.img-tile .idx {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent dark */
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 50%; /* circle look */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  pointer-events: none; /* so it doesn’t block drag */
+  user-select: none;
+}
 /* delete rounded X (X2) */
 .remove-btn {
   position: absolute;
@@ -431,3 +445,4 @@ body.dark .bg-ornament {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
