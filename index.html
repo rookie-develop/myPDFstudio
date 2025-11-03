@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MyPDF Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- faded background logo / soft blur -->
+    <div class="bg-ornament" aria-hidden="true">
+      <div class="bg-circle"></div>
+      <div class="bg-text">MyPDF Studio</div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true">📄</div>
+        <div class="title">MyPDF Studio</div>
+      </div>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+        🌙
+      </button>
+    </header>
+
+    <main class="container">
+      <section class="preview-card">
+        <div id="imagePreview" class="grid" aria-live="polite"></div>
+        <div class="hint">
+          Tap + to add images • Drag to reorder • Tap × to remove
+        </div>
+      </section>
+
+      <section class="controls-card">
+        <h4>PDF Settings</h4>
+
+        <label class="row">
+          <span>Paper size</span>
+          <select id="paperSize">
+            <option value="a4">A4 (210 × 297 mm)</option>
+            <option value="letter">Letter</option>
+            <option value="fit">Fit to image</option>
+          </select>
+        </label>
+
+        <label class="row">
+          <span>Orientation</span>
+          <select id="orientation">
+            <option value="portrait">Portrait</option>
+            <option value="landscape">Landscape</option>
+          </select>
+        </label>
+
+        <label class="row">
+          <span>Margin (mm)</span>
+          <input id="margin" type="number" value="10" min="0" max="50" />
+        </label>
+
+        <button id="generateBtn" class="generate-btn">📄 Generate PDF</button>
+        <a id="downloadLink" class="download-link" style="display: none"
+          >⬇ Download PDF</a
+        >
+      </section>
+    </main>
+
+    <input
+      id="fileInput"
+      type="file"
+      accept="image/*"
+      multiple
+      style="display: none"
+    />
+
+    <!-- Floating Add Button (FAB-1) -->
+    <button id="addBtn" class="fab" aria-label="Add images">＋</button>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="overlay" style="display: none">
+      <div class="spinner"></div>
+      <div class="overlay-text">Processing — please wait</div>
+    </div>
+
+    <!-- Success popup -->
+    <div id="popup" class="popup" style="display: none">
+      <div class="popup-inner">
+        <div class="popup-icon">✅</div>
+        <div class="popup-text">PDF ready — tap Download</div>
+        <button id="popupClose" class="btn">OK</button>
+      </div>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="libs/jspdf.umd.min.js"></script>
+    <script src="libs/Sortable.min.js"></script>
+
+    <!-- Main App JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
